@@ -85,6 +85,7 @@
         socket.emit("chat message", inputMsg.value);
         inputMsg.value = "";
       }
+      alert("Working");
     });
 
     socket.on("username", (username) => {
