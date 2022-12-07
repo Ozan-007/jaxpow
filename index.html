@@ -72,9 +72,9 @@
       <button type="submit">Send</button>
     </form>
   </body>
-  <script src="../socket.io/socket.io.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
   <script>
-    let socket = io();
+    var socket = io();
 
     let form = document.getElementById("form");
     let inputMsg = document.getElementById("message-input");
