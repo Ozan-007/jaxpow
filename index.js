@@ -20,6 +20,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
+server.listen("https://clinquant-macaron-7cbf66.netlify.app/", () => {
   console.log("listening on *:3000");
 });
