@@ -2,9 +2,16 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const cors = require("cors");
+app.use(cors());
+
 const server = http.createServer(app);
 const { Server } = require("socket.io");
-const io = new Server(server);
+
+const io = new Server(server, {
+  cors: {
+    origin: "https://clinquant-macaron-7cbf66.netlify.app/",
+  },
+});
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
@@ -20,8 +27,6 @@ io.on("connection", (socket) => {
     console.log("Message: ", msg);
   });
 });
-
-app.use(cors());
 
 server.listen(process.env.PORT || 3000, () => {
   console.log("listening on *:3000");
