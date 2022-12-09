@@ -10,6 +10,7 @@ const { Server } = require("socket.io");
 const io = new Server(server, {
   cors: {
     origin: "https://clinquant-macaron-7cbf66.netlify.app/",
+    methods: ["GET", "POST"],
   },
 });
 
